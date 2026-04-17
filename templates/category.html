@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ current_path | join(' / ') }}</h2>
+    
+    {% if category_data.files %}
+    <div class="notes-grid">
+        {% for file in category_data.files %}
+            <div class="note-card">
+                <div class="note-card-header">
+                    <h3 class="note-card-title">
+                        {% if file.type == 'md' %}
+                            <a href="{{ relative_prefix | default('./') }}{{ file.path | replace('.md', '.html') }}">{{ file.title }}</a>
+                        {% elif file.type == 'html' %}
+                            <a href="{{ relative_prefix | default('./') }}{{ file.path }}">{{ file.title }}</a>
+                        {% elif file.type == 'pdf' %}
+                            <a href="{{ relative_prefix | default('./') }}{{ file.path }}">{{ file.title }}</a>
+                        {% endif %}
+                    </h3>
+                    <div class="note-card-meta">
+                        <span class="note-card-type">
+                            {% if file.type == 'md' %}Markdown{% elif file.type == 'html' %}HTML{% elif file.type == 'pdf' %}PDF{% endif %}
+                        </span>
+                    </div>
+                </div>
+                {% if file.summary %}
+                <p class="note-card-summary">{{ file.summary }}</p>
+                {% endif %}
+                <div class="note-card-footer">
+                    <span class="file-icon">
+                        {% if file.type == 'md' %}📄{% elif file.type == 'html' %}🌐{% elif file.type == 'pdf' %}📑{% endif %}
+                    </span>
+                    <span class="file-meta">{{ file.type | upper }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="no-notes">该分类下暂无笔记</p>
+    {% endif %}
+    
+    {% if category_data.children %}
+    <div class="sub-categories">
+        <h3>子分类</h3>
+        <ul>
+            {% for cat_name, cat_data in category_data.children.items() %}
+                <li>
+                    <a href="{{ relative_prefix | default('./') }}{{ current_path | join('/') }}{{ cat_name }}/index.html">
+                        {{ cat_name }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+{% endblock %}

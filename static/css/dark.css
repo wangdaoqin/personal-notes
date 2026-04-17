@@ -1,0 +1,238 @@
+body.dark-theme {
+    --primary-color: #90caf9;
+    --primary-light: #64b5f6;
+    --primary-dark: #42a5f5;
+    --secondary-color: #f8bbd0;
+    --secondary-light: #f48fb1;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --background: #0f172a;
+    --card-bg: #1e293b;
+    --border-color: #334155;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme {
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+body.dark-theme header {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+}
+
+body.dark-theme header h1 a {
+    color: var(--primary-color);
+}
+
+body.dark-theme header h1 a:hover {
+    color: var(--primary-light);
+}
+
+body.dark-theme #search-input {
+    background-color: var(--background);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+body.dark-theme #search-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(144, 202, 249, 0.1);
+}
+
+body.dark-theme #search-results {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+body.dark-theme #search-results li:hover {
+    background-color: var(--background);
+}
+
+body.dark-theme #theme-toggle {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+body.dark-theme #theme-toggle:hover {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+    color: var(--background);
+}
+
+body.dark-theme .sidebar {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+}
+
+body.dark-theme .sidebar:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+body.dark-theme .category-tree a {
+    color: var(--text-primary);
+}
+
+body.dark-theme .category-tree a:hover {
+    color: var(--primary-color);
+    background-color: rgba(144, 202, 249, 0.1);
+}
+
+body.dark-theme .sub-category a {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .sub-category a:hover {
+    color: var(--primary-color);
+}
+
+body.dark-theme .content {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+}
+
+body.dark-theme .content:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+body.dark-theme .content h2 {
+    border-bottom-color: var(--primary-light);
+    color: var(--text-primary);
+}
+
+body.dark-theme .content h3 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .note-card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+body.dark-theme .note-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-light);
+}
+
+body.dark-theme .note-card-title {
+    color: var(--text-primary);
+}
+
+body.dark-theme .note-card-title a {
+    color: var(--text-primary);
+}
+
+body.dark-theme .note-card-title a:hover {
+    color: var(--primary-color);
+}
+
+body.dark-theme .note-card-meta {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .note-card-type {
+    background-color: var(--primary-light);
+    color: var(--background);
+}
+
+body.dark-theme .note-card-summary {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .note-card-footer {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .file-list a {
+    color: var(--text-primary);
+}
+
+body.dark-theme .file-list a:hover {
+    color: var(--primary-color);
+}
+
+body.dark-theme .file-meta {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .sub-categories h3 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .sub-categories a {
+    color: var(--text-primary);
+}
+
+body.dark-theme .sub-categories a:hover {
+    color: var(--primary-color);
+}
+
+body.dark-theme .note-meta {
+    background-color: rgba(144, 202, 249, 0.1);
+    border-left-color: var(--primary-color);
+}
+
+body.dark-theme .file-type {
+    background-color: var(--primary-color);
+    color: var(--background);
+}
+
+body.dark-theme .file-mtime {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .tag {
+    background-color: rgba(248, 187, 208, 0.1);
+    color: var(--secondary-color);
+}
+
+body.dark-theme .note-content {
+    color: var(--text-primary);
+}
+
+body.dark-theme .note-content h1, 
+body.dark-theme .note-content h2, 
+body.dark-theme .note-content h3, 
+body.dark-theme .note-content h4, 
+body.dark-theme .note-content h5, 
+body.dark-theme .note-content h6 {
+    color: var(--text-primary);
+}
+
+body.dark-theme .note-content code {
+    background-color: rgba(144, 202, 249, 0.1);
+    color: var(--primary-light);
+}
+
+body.dark-theme .note-content pre {
+    background-color: rgba(144, 202, 249, 0.05);
+    border-color: var(--border-color);
+}
+
+body.dark-theme .note-content pre code {
+    color: var(--text-primary);
+}
+
+body.dark-theme .note-content blockquote {
+    border-left-color: var(--primary-color);
+    color: var(--text-secondary);
+}
+
+body.dark-theme footer {
+    background-color: var(--card-bg);
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    border-top-color: var(--border-color);
+}
+
+body.dark-theme footer p {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .no-notes {
+    color: var(--text-secondary);
+}

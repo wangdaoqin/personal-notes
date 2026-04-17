@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ config.site_name }}</title>
+    <link rel="stylesheet" href="{{ relative_prefix | default('./') }}static/css/main.css">
+    <link rel="stylesheet" href="{{ relative_prefix | default('./') }}static/css/dark.css" id="dark-theme" disabled>
+    <script src="{{ relative_prefix | default('./') }}static/js/theme.js"></script>
+    <script src="{{ relative_prefix | default('./') }}static/js/search.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="{{ relative_prefix | default('./') }}">{{ config.site_name }}</a></h1>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="搜索笔记...">
+                    <div id="search-results"></div>
+                </div>
+                <button id="theme-toggle">切换主题</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container main-content">
+        <aside class="sidebar">
+            <nav>
+                <ul class="category-tree">
+                    {% macro render_category_tree(categories, path=[]) %}
+                        {% for cat_name, cat_data in categories.items() %}
+                            <li>
+                                <a href="{{ relative_prefix | default('./') }}{{ path | join('/') }}{{ cat_name }}/index.html">
+                                    {{ cat_name }}
+                                </a>
+                                {% if cat_data.children %}
+                                    <ul class="sub-category">
+                                        {{ render_category_tree(cat_data.children, path + [cat_name]) }}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    {% endmacro %}
+                    {{ render_category_tree(categories) }}
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="content">
+            {% block content %}
+            <h2>欢迎使用笔记管理系统</h2>
+            <p>这是一个静态笔记管理网站，支持Markdown、HTML和PDF文件的自动同步与展示。</p>
+            <p>您可以在 <code>notes/</code> 目录下创建文件夹和文件，网站会自动同步更新。</p>
+            
+            <h3>最近更新的笔记</h3>
+            <div class="notes-grid">
+                {% for cat_name, cat_data in categories.items() %}
+                    {% for file in cat_data.files %}
+                        <div class="note-card">
+                            <div class="note-card-header">
+                                <h3 class="note-card-title">
+                                    {% if file.type == 'md' %}
+                                        <a href="./{{ file.path | replace('.md', '.html') }}">{{ file.title }}</a>
+                                    {% elif file.type == 'html' %}
+                                        <a href="./{{ file.path }}">{{ file.title }}</a>
+                                    {% elif file.type == 'pdf' %}
+                                        <a href="./{{ file.path }}">{{ file.title }}</a>
+                                    {% endif %}
+                                </h3>
+                                <div class="note-card-meta">
+                                    <span class="note-card-type">
+                                        {% if file.type == 'md' %}Markdown{% elif file.type == 'html' %}HTML{% elif file.type == 'pdf' %}PDF{% endif %}
+                                    </span>
+                                    <span>{{ cat_name }}</span>
+                                </div>
+                            </div>
+                            {% if file.summary %}
+                            <p class="note-card-summary">{{ file.summary }}</p>
+                            {% endif %}
+                            <div class="note-card-footer">
+                                <span class="file-icon">
+                                    {% if file.type == 'md' %}📄{% elif file.type == 'html' %}🌐{% elif file.type == 'pdf' %}📑{% endif %}
+                                </span>
+                                <span class="file-meta">{{ file.type | upper }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+            {% endblock %}
+        </main>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; {{ config.site_name }} - 静态笔记管理系统</p>
+        </div>
+    </footer>
+</body>
+</html>

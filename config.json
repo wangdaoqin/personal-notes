@@ -1,0 +1,9 @@
+{
+    "site_name": "笔记管理系统",
+    "theme": "light",
+    "sort_by": "mtime",
+    "show_sidebar": true,
+    "enable_search": true,
+    "enable_theme_switch": true,
+    "footer_text": "© 2026 笔记管理系统 - 静态笔记管理网站"
+}

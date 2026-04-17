@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>{{ file_info.title }}</h2>
+    
+    <div class="note-meta">
+        <span class="file-type">{{ file_info.type | upper }}</span>
+        {% if file_info.tags %}
+        <div class="tags">
+            {% for tag in file_info.tags %}
+                <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="note-content">
+        {% if file_info.type == 'md' %}
+            {{ content | safe }}
+        {% elif file_info.type == 'html' %}
+            <iframe src="{{ relative_prefix | default('./') }}{{ file_info.path }}" frameborder="0" width="100%" height="800px"></iframe>
+        {% elif file_info.type == 'pdf' %}
+            <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file={{ relative_prefix | default('./') }}{{ file_info.path }}" frameborder="0" width="100%" height="800px"></iframe>
+        {% endif %}
+    </div>
+{% endblock %}
