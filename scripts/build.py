@@ -62,10 +62,15 @@ def scan_notes():
                     categories['__root__']['files'].append(file_info)
                 else:
                     current = categories
-                    for cat in category_path:
-                        if cat not in current:
-                            current[cat] = {'children': {}, 'files': []}
-                        current = current[cat]
+                    for i, cat in enumerate(category_path):
+                        if i == 0:
+                            if cat not in current:
+                                current[cat] = {'children': {}, 'files': []}
+                            current = current[cat]
+                        else:
+                            if cat not in current['children']:
+                                current['children'][cat] = {'children': {}, 'files': []}
+                            current = current['children'][cat]
                     if 'files' not in current:
                         current['files'] = []
                     current['files'].append(file_info)
@@ -129,7 +134,11 @@ def build_site():
                 with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                     content = f.read()
                 post = frontmatter.loads(content)
-                html_content = render_markdown(post.content)
+                # 如果没有frontmatter，使用整个内容
+                if not post.content:
+                    html_content = render_markdown(content)
+                else:
+                    html_content = render_markdown(post.content)
                 
                 # 计算笔记页面的相对路径前缀
                 note_depth = len(file_info['path'].split(os.sep)) - 1

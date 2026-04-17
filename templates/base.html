@@ -30,7 +30,7 @@
                     {% macro render_category_tree(categories, path=[]) %}
                         {% for cat_name, cat_data in categories.items() %}
                             <li>
-                                <a href="{{ relative_prefix | default('./') }}{{ path | join('/') }}{{ cat_name }}/index.html">
+                                <a href="{{ relative_prefix | default('./') }}{{ path | join('/') }}{% if path %}/{% endif %}{{ cat_name }}/index.html">
                                     {{ cat_name }}
                                 </a>
                                 {% if cat_data.children %}

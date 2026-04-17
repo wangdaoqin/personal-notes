@@ -45,7 +45,7 @@
         <ul>
             {% for cat_name, cat_data in category_data.children.items() %}
                 <li>
-                    <a href="{{ relative_prefix | default('./') }}{{ current_path | join('/') }}{{ cat_name }}/index.html">
+                    <a href="{{ relative_prefix | default('./') }}{{ current_path | join('/') }}{% if current_path %}/{% endif %}{{ cat_name }}/index.html">
                         {{ cat_name }}
                     </a>
                 </li>

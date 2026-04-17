@@ -476,6 +476,35 @@ header h1 a:hover {
     font-style: italic;
 }
 
+.note-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--spacing-md);
+    overflow-x: auto;
+    display: block;
+}
+
+.note-content table th,
+.note-content table td {
+    padding: 10px 12px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.note-content table th {
+    background-color: rgba(100, 181, 246, 0.1);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.note-content table tr:nth-child(even) {
+    background-color: rgba(100, 181, 246, 0.05);
+}
+
+.note-content table tr:hover {
+    background-color: rgba(100, 181, 246, 0.1);
+}
+
 footer {
     background-color: var(--card-bg);
     box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
