@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>笔记管理系统</title>
+    <link rel="stylesheet" href="./static/css/main.css">
+    <link rel="stylesheet" href="./static/css/dark.css" id="dark-theme" disabled>
+    <script src="./static/js/theme.js"></script>
+    <script src="./static/js/search.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="./">笔记管理系统</a></h1>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="搜索笔记...">
+                    <div id="search-results"></div>
+                </div>
+                <button id="theme-toggle">切换主题</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container main-content">
+        <aside class="sidebar">
+            <nav>
+                <ul class="category-tree">
+                    
+                    
+                        
+                            <li>
+                                <a href="./CFETP/index.html">
+                                    CFETP
+                                </a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="./R语言/index.html">
+                                    R语言
+                                </a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="./公共卫生/index.html">
+                                    公共卫生
+                                </a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="./生活/index.html">
+                                    生活
+                                </a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="./科研/index.html">
+                                    科研
+                                </a>
+                                
+                            </li>
+                        
+                    
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="content">
+            
+            <h2>欢迎使用笔记管理系统</h2>
+            <p>这是一个静态笔记管理网站，支持Markdown、HTML和PDF文件的自动同步与展示。</p>
+            <p>您可以在 <code>notes/</code> 目录下创建文件夹和文件，网站会自动同步更新。</p>
+            
+            <h3>最近更新的笔记</h3>
+            <div class="notes-grid">
+                
+                    
+                        <div class="note-card">
+                            <div class="note-card-header">
+                                <h3 class="note-card-title">
+                                    
+                                        <a href="./CFETP\中国疾病预防控制中心（中国预防医学科学院）关于开展现场流行病学培训项目第二十五期招生工作的通知.pdf">中国疾病预防控制中心（中国预防医学科学院）关于开展现场流行病学培训项目第二十五期招生工作的通知</a>
+                                    
+                                </h3>
+                                <div class="note-card-meta">
+                                    <span class="note-card-type">
+                                        PDF
+                                    </span>
+                                    <span>CFETP</span>
+                                </div>
+                            </div>
+                            
+                            <div class="note-card-footer">
+                                <span class="file-icon">
+                                    📑
+                                </span>
+                                <span class="file-meta">PDF</span>
+                            </div>
+                        </div>
+                    
+                
+                    
+                        <div class="note-card">
+                            <div class="note-card-header">
+                                <h3 class="note-card-title">
+                                    
+                                        <a href="./R语言\R-Tutorial.html">R-Tutorial</a>
+                                    
+                                </h3>
+                                <div class="note-card-meta">
+                                    <span class="note-card-type">
+                                        HTML
+                                    </span>
+                                    <span>R语言</span>
+                                </div>
+                            </div>
+                            
+                            <div class="note-card-footer">
+                                <span class="file-icon">
+                                    🌐
+                                </span>
+                                <span class="file-meta">HTML</span>
+                            </div>
+                        </div>
+                    
+                        <div class="note-card">
+                            <div class="note-card-header">
+                                <h3 class="note-card-title">
+                                    
+                                        <a href="./R语言\R语言教程.html">R语言教程</a>
+                                    
+                                </h3>
+                                <div class="note-card-meta">
+                                    <span class="note-card-type">
+                                        HTML
+                                    </span>
+                                    <span>R语言</span>
+                                </div>
+                            </div>
+                            
+                            <div class="note-card-footer">
+                                <span class="file-icon">
+                                    🌐
+                                </span>
+                                <span class="file-meta">HTML</span>
+                            </div>
+                        </div>
+                    
+                
+                    
+                        <div class="note-card">
+                            <div class="note-card-header">
+                                <h3 class="note-card-title">
+                                    
+                                        <a href="./公共卫生\暴发调查核心步骤.html">暴发调查核心步骤</a>
+                                    
+                                </h3>
+                                <div class="note-card-meta">
+                                    <span class="note-card-type">
+                                        Markdown
+                                    </span>
+                                    <span>公共卫生</span>
+                                </div>
+                            </div>
+                            
+                            <div class="note-card-footer">
+                                <span class="file-icon">
+                                    📄
+                                </span>
+                                <span class="file-meta">MD</span>
+                            </div>
+                        </div>
+                    
+                        <div class="note-card">
+                            <div class="note-card-header">
+                                <h3 class="note-card-title">
+                                    
+                                        <a href="./公共卫生\流感样病例.html">流感样病例</a>
+                                    
+                                </h3>
+                                <div class="note-card-meta">
+                                    <span class="note-card-type">
+                                        Markdown
+                                    </span>
+                                    <span>公共卫生</span>
+                                </div>
+                            </div>
+                            
+                            <div class="note-card-footer">
+                                <span class="file-icon">
+                                    📄
+                                </span>
+                                <span class="file-meta">MD</span>
+                            </div>
+                        </div>
+                    
+                
+                    
+                        <div class="note-card">
+                            <div class="note-card-header">
+                                <h3 class="note-card-title">
+                                    
+                                        <a href="./生活\vibe coding心得.html">Vibe Coding 心得感悟</a>
+                                    
+                                </h3>
+                                <div class="note-card-meta">
+                                    <span class="note-card-type">
+                                        Markdown
+                                    </span>
+                                    <span>生活</span>
+                                </div>
+                            </div>
+                            
+                            <p class="note-card-summary">关于编程氛围、代码效率和开发者心态的个人思考与总结</p>
+                            
+                            <div class="note-card-footer">
+                                <span class="file-icon">
+                                    📄
+                                </span>
+                                <span class="file-meta">MD</span>
+                            </div>
+                        </div>
+                    
+                
+                    
+                        <div class="note-card">
+                            <div class="note-card-header">
+                                <h3 class="note-card-title">
+                                    
+                                        <a href="./科研\Se与高血压—LDL-C的中介效应分析.html">Se与高血压—LDL-C的中介效应分析</a>
+                                    
+                                </h3>
+                                <div class="note-card-meta">
+                                    <span class="note-card-type">
+                                        Markdown
+                                    </span>
+                                    <span>科研</span>
+                                </div>
+                            </div>
+                            
+                            <div class="note-card-footer">
+                                <span class="file-icon">
+                                    📄
+                                </span>
+                                <span class="file-meta">MD</span>
+                            </div>
+                        </div>
+                    
+                        <div class="note-card">
+                            <div class="note-card-header">
+                                <h3 class="note-card-title">
+                                    
+                                        <a href="./科研\流脑、乙脑和其他.html">流脑、乙脑和其他</a>
+                                    
+                                </h3>
+                                <div class="note-card-meta">
+                                    <span class="note-card-type">
+                                        Markdown
+                                    </span>
+                                    <span>科研</span>
+                                </div>
+                            </div>
+                            
+                            <div class="note-card-footer">
+                                <span class="file-icon">
+                                    📄
+                                </span>
+                                <span class="file-meta">MD</span>
+                            </div>
+                        </div>
+                    
+                
+            </div>
+            
+        </main>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 笔记管理系统 - 静态笔记管理系统</p>
+        </div>
+    </footer>
+</body>
+</html>

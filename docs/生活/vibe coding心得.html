@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>笔记管理系统</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/dark.css" id="dark-theme" disabled>
+    <script src="../static/js/theme.js"></script>
+    <script src="../static/js/search.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="../">笔记管理系统</a></h1>
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="搜索笔记...">
+                    <div id="search-results"></div>
+                </div>
+                <button id="theme-toggle">切换主题</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container main-content">
+        <aside class="sidebar">
+            <nav>
+                <ul class="category-tree">
+                    
+                    
+                        
+                            <li>
+                                <a href="../CFETP/index.html">
+                                    CFETP
+                                </a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="../R语言/index.html">
+                                    R语言
+                                </a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="../公共卫生/index.html">
+                                    公共卫生
+                                </a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="../生活/index.html">
+                                    生活
+                                </a>
+                                
+                            </li>
+                        
+                            <li>
+                                <a href="../科研/index.html">
+                                    科研
+                                </a>
+                                
+                            </li>
+                        
+                    
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="content">
+            
+    <h2>Vibe Coding 心得感悟</h2>
+    
+    <div class="note-meta">
+        <span class="file-type">MD</span>
+        
+        <div class="tags">
+            
+                <span class="tag">编程</span>
+            
+                <span class="tag">效率</span>
+            
+                <span class="tag">感悟</span>
+            
+                <span class="tag">生产力</span>
+            
+        </div>
+        
+    </div>
+    
+    <div class="note-content">
+        
+            <h1 id="vibe-coding-心得感悟">Vibe Coding 心得感悟</h1>
+
+<h2 id="什么是-vibe-coding">什么是 Vibe Coding</h2>
+
+<p>Vibe Coding（氛围编程）是一种新兴的编程理念，强调在轻松愉快的氛围中进行代码开发。它不仅仅是关于技术本身，更是关于<strong>如何享受编程过程</strong>和<strong>保持高效工作状态</strong>的哲学。</p>
+
+<blockquote>
+  <p>"代码不仅仅是逻辑的堆砌，更是创意与效率的完美结合。"</p>
+</blockquote>
+
+<h2 id="为什么氛围很重要">为什么氛围很重要</h2>
+
+<h3 id="1-环境决定效率">1. 环境决定效率</h3>
+
+<p>一个舒适的开发环境可以显著提升编程效率：</p>
+
+<ul>
+<li><strong>整洁的工作空间</strong> - 减少干扰，提高专注力</li>
+<li><strong>舒适的座椅和桌面</strong> - 减少身体疲劳</li>
+<li><strong>合适的音乐</strong> - 帮助进入心流状态</li>
+<li><strong>良好的照明</strong> - 保护眼睛，提高长时间工作的舒适度</li>
+</ul>
+
+<h3 id="2-心态影响质量">2. 心态影响质量</h3>
+
+<pre><code>// 焦虑的代码
+function processData(data) {
+    if (data !== null &amp;&amp; data !== undefined) {
+        if (Array.isArray(data)) {
+            return data.map(item =&gt; {
+                if (item &amp;&amp; typeof item === 'object') {
+                    return transform(item);
+                }
+            });
+        }
+    }
+    return null;
+}
+
+// 放松状态的代码
+function processData(data) {
+    if (!data) return null;
+    if (!Array.isArray(data)) return null;
+
+    return data
+        .filter(Boolean)
+        .map(transform);
+}
+</code></pre>
+
+<p>看到区别了吗？当我们处于放松的状态时，代码会更加简洁和优雅。</p>
+
+<h2 id="实践心得">实践心得</h2>
+
+<h3 id="1-建立仪式感">1. 建立仪式感</h3>
+
+<p>创建属于你自己的编程仪式：</p>
+
+<ol>
+<li>泡一杯喜欢的咖啡或茶</li>
+<li>打开喜欢的背景音乐</li>
+<li>整理桌面，确保一切井然有序</li>
+<li>设定明确的目标和番茄钟</li>
+<li>开始编码</li>
+</ol>
+
+<h3 id="2-善用工具">2. 善用工具</h3>
+
+<p>使用合适的工具可以大大提升体验：</p>
+
+<table>
+<thead>
+<tr>
+  <th>工具类型</th>
+  <th>推荐选择</th>
+  <th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>编辑器</td>
+  <td>VS Code</td>
+  <td>强大的扩展生态</td>
+</tr>
+<tr>
+  <td>终端</td>
+  <td>Windows Terminal</td>
+  <td>美观且高效</td>
+</tr>
+<tr>
+  <td>音乐</td>
+  <td>lofi hip hop</td>
+  <td>专注背景音乐</td>
+</tr>
+<tr>
+  <td>笔记</td>
+  <td>Obsidian/你的笔记网站</td>
+  <td>知识沉淀</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="3-保持专注">3. 保持专注</h3>
+
+<pre><code>## 专注技巧
+
+- 使用「勿扰模式」屏蔽通知
+- 设置明确的工作时间段
+- 每隔45分钟休息5-10分钟
+- 避免多任务处理
+</code></pre>
+
+<h2 id="心态调整">心态调整</h2>
+
+<h3 id="接受不完美">接受不完美</h3>
+
+<blockquote>
+  <p>"Perfect is the enemy of good." — Voltaire</p>
+</blockquote>
+
+<ul>
+<li><strong>代码迭代</strong> - 初版代码不需要完美，后续可以重构</li>
+<li><strong>敏捷开发</strong> - 快速交付，不断改进</li>
+<li><strong>容错心态</strong> - 错误是最好的老师</li>
+</ul>
+
+<h3 id="享受过程">享受过程</h3>
+
+<p>编程不应该只是谋生的手段，更应该是：</p>
+
+<ul>
+<li>表达创意的渠道</li>
+<li>解决问题的艺术</li>
+<li>持续学习的旅程</li>
+</ul>
+
+<h2 id="总结">总结</h2>
+
+<p>Vibe Coding 教会我的最重要的事情是：</p>
+
+<ol>
+<li><strong>效率 ≠ 长时间工作</strong> - 状态好时的一小时胜过心不在焉的三小时</li>
+<li><strong>工具很重要</strong> - 投资好的工具就是投资自己</li>
+<li><strong>心态决定一切</strong> - 保持积极和好奇，享受编码的乐趣</li>
+<li><strong>生活平衡</strong> - 工作是为了更好地生活</li>
+</ol>
+
+<p>希望这些心得对你有所帮助！记住，编程是一件有趣的事情，让我们一起享受它吧 🚀</p>
+
+<hr />
+
+<p><em>写于 2026年4月</em></p>
+
+        
+    </div>
+
+        </main>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 笔记管理系统 - 静态笔记管理系统</p>
+        </div>
+    </footer>
+</body>
+</html>

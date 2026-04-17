@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R语言基础教程</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #7f8c8d;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #c7254e;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #3498db;
+        }
+        pre code {
+            color: #333;
+        }
+        .tip {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>R语言基础教程</h1>
+
+    <h2>简介</h2>
+    <p>R语言是一种用于统计计算和图形绘制的编程语言和软件环境，广泛应用于数据分析和统计建模领域。</p>
+
+    <h2>基本语法</h2>
+
+    <h3>1. 变量赋值</h3>
+    <pre><code># 使用赋值运算符 <-
+x <- 10
+y <- "Hello, R!"
+
+# 也可以使用 = 号
+z = 25</code></pre>
+
+    <h3>2. 数据类型</h3>
+    <pre><code># 数值型
+num <- 3.14
+
+# 字符型
+char <- "R语言"
+
+# 逻辑型
+flag <- TRUE
+
+# 查看数据类型
+class(num)</code></pre>
+
+    <h3>3. 向量和数组</h3>
+    <pre><code># 创建向量
+vec <- c(1, 2, 3, 4, 5)
+
+# 序列
+seq_vec <- 1:10
+
+# 重复
+rep_vec <- rep(c(1, 2), times = 3)</code></pre>
+
+    <div class="tip">
+        <strong>提示：</strong>R语言中的索引从1开始，而不是0！
+    </div>
+
+    <h3>4. 数据框</h3>
+    <pre><code># 创建数据框
+df <- data.frame(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    score = c(85, 92, 78)
+)
+
+# 查看数据框结构
+str(df)
+
+# 查看前几行
+head(df)</code></pre>
+
+    <h2>数据处理基础</h2>
+
+    <h3>安装和加载包</h3>
+    <pre><code># 安装包
+install.packages("dplyr")
+
+# 加载包
+library(dplyr)</code></pre>
+
+    <h3>数据筛选和变换</h3>
+    <pre><code># 使用dplyr进行数据操作
+result <- df %>%
+    filter(age > 25) %>%
+    mutate(score_level = ifelse(score >= 90, "高", "中"))</code></pre>
+
+    <h2>数据可视化</h2>
+    <pre><code># 绘制直方图
+hist(df$score, main = "分数分布", xlab = "分数", col = "skyblue")
+
+# 绘制散点图
+plot(df$age, df$score, main = "年龄与分数关系", xlab = "年龄", ylab = "分数")
+
+# 使用ggplot2绘图
+library(ggplot2)
+ggplot(df, aes(x = age, y = score, color = name)) +
+    geom_point(size = 3) +
+    labs(title = "散点图示例")</code></pre>
+
+    <div class="warning">
+        <strong>注意：</strong>R语言区分大小写，<code>Sum()</code>和<code>sum()</code>是不同的函数！
+    </div>
+
+    <h2>常用函数</h2>
+    <ul>
+        <li><code>mean()</code> - 计算平均值</li>
+        <li><code>sd()</code> - 计算标准差</li>
+        <li><code>summary()</code> - 生成描述性统计</li>
+        <li><code>cor()</code> - 计算相关系数</li>
+        <li><code>lm()</code> - 线性回归分析</li>
+    </ul>
+
+    <h2>总结</h2>
+    <p>R语言是一门功能强大的统计分析语言，适合数据科学家、统计学家和研究员使用。通过学习和掌握R语言，你可以高效地进行数据处理、统计分析和可视化工作。</p>
+</body>
+</html>

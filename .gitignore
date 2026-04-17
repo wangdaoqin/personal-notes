@@ -1,9 +1,6 @@
 # 排除笔记源文件目录
 notes/
 
-# 排除构建输出目录
-docs/
-
 # 排除Python虚拟环境
 venv/
 env/
